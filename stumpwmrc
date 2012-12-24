@@ -12,7 +12,7 @@
 
 (defcommand gnome-terminal () ()
   "Open gnome-terminal window"
-  (run-or-raise "gnome-terminal" '(:instance "terminal")))
+  (run-or-raise "terminator" '(:instance "terminal")))
 
 (define-key *root-map* (kbd "t") "gnome-terminal")
 (define-key *root-map* (kbd "C-t") "gnome-terminal")
