@@ -1,0 +1,20 @@
+;; -*-lisp-*-?
+(in-package :stumpwm)
+;
+(set-prefix-key (kbd "Menu"))
+
+(defcommand conkeror () ()
+  "run conkeror"
+  (run-or-raise "conkeror" '(:class "Conkeror")))
+
+(define-key *root-map* (kbd "r") "conkeror")
+(define-key *root-map* (kbd "C-r") "conkeror")
+
+(defcommand gnome-terminal () ()
+  "Open gnome-terminal window"
+  (run-or-raise "gnome-terminal" '(:instance "terminal")))
+
+(define-key *root-map* (kbd "t") "gnome-terminal")
+(define-key *root-map* (kbd "C-t") "gnome-terminal")
+
+
