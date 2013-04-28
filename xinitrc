@@ -1,1 +1,1 @@
-sbcl --load ".xinitrc.lisp"
+sbcl --load "$HOME/.xinitrc.lisp"

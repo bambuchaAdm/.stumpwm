@@ -8,13 +8,21 @@
   (run-or-raise "conkeror" '(:class "Conkeror")))
 
 (define-key *root-map* (kbd "r") "conkeror")
-(define-key *root-map* (kbd "C-r") "conkeror")
 
 (defcommand gnome-terminal () ()
   "Open gnome-terminal window"
   (run-or-raise "terminator" '(:instance "terminal")))
 
 (define-key *root-map* (kbd "t") "gnome-terminal")
-(define-key *root-map* (kbd "C-t") "gnome-terminal")
 
+(defcommand vol-up () ()
+  "Make volume outpiut higher"
+  (sb-ext:run-program "/usr/bin/amixer" '("set" "Master" "5%+")))
 
+(define-key *top-map* (kbd "XF86AudioRaiseVolume") "vol-up")
+
+(defcommand vol-down () ()
+  "Make volume outpiut higher"
+  (sb-ext:run-program "/usr/bin/amixer" '("set" "Master" "5%-")))
+
+(define-key *top-map* (kbd "XF86AudioLowerVolume") "vol-down")
